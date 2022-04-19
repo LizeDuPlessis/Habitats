@@ -23,17 +23,25 @@ export default function CountryList({ country }) {
   );
   return (
     <>
-      <form type="submit" className="text-center">
+      <form role="search" className="text-center">
+        <label htmlFor="search" className="sr-only">
+          Search:
+        </label>
         <input
           className="w-4/5 h-9 text-lg shadow appearance-none rounded-lg border-solid border-1 border-stone-300 focus:shadow-outline"
-          type="input"
+          type="search"
+          id="search"
+          name="search"
           placeholder="Type to search..."
+          title="search for a country"
           onChange={handleUserInput}
           value={userInput}
+          required
         />
         <button
           className=" h-9 ml-3 shadow appearance-none rounded-lg border-solid border-1 border-stone-300 hover:shadow "
           onClick={handleUserSearched}
+          type="submit"
         >
           Search
         </button>
