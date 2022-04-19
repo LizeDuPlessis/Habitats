@@ -9,6 +9,8 @@ export default function CountryList({ country }) {
 
   const [userSearched, setUserSearched] = useState(false);
 
+  const [error, setError] = useState(null);
+
   const handleUserInput = (e) => {
     setUserInput(e.target.value);
     console.log(userInput);
@@ -16,6 +18,20 @@ export default function CountryList({ country }) {
   const handleUserSearched = (e) => {
     e.preventDefault();
     setUserSearched(!userSearched);
+    if (filteredCountry.length === 0) {
+      setError(
+        <div className="text-center mt-5 ">
+          <Image
+            src="/try_again.jpg"
+            width={350}
+            height={350}
+            alt="try_again"
+          />
+
+          <h1>Uhhh..Try again!</h1>
+        </div>
+      );
+    }
   };
 
   const filteredCountry = country.filter((country) =>
@@ -46,9 +62,12 @@ export default function CountryList({ country }) {
           Search
         </button>
       </form>
+      <span className="errMsg" role="status">
+        {error}
+      </span>
       <CountryCard>
         <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xlg:grid-cols-4 gap-4 text-lg">
-          {filteredCountry.length ? (
+          {filteredCountry &&
             filteredCountry.map((country) => (
               <Link
                 href={`/Country/${country?.name.common}`}
@@ -64,19 +83,7 @@ export default function CountryList({ country }) {
                   <h2>{country?.name.common}</h2>
                 </a>
               </Link>
-            ))
-          ) : (
-            <div className="text-center mt-5 ">
-              <Image
-                src="/try_again.jpg"
-                width={350}
-                height={350}
-                alt="try_again"
-              />
-
-              <h1>Uhhh..Try again!</h1>
-            </div>
-          )}
+            ))}
         </div>
       </CountryCard>
     </>
