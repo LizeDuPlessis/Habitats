@@ -1,5 +1,6 @@
 # Habitats
-Nextjs (React) + TailwindCSS + Open Weather API + Rest countries API
+
+Found out facts and the weather from any country in the world. I built this app as a way to hone my nextjs/React skills when working with API's.
 
 ## Built with
 
