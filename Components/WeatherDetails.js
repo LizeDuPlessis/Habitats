@@ -1,6 +1,6 @@
 const WeatherDetails = ({ countryWeather }) => {
   return (
-    <div className="border-black border-solid border-2 bg-red-600">
+    <div className="border-black border-solid border-2 rounded-lg bg-red-600">
       <h1 className="text-center">Weather</h1>
       <ul className="flex flex-wrap justify-center">
         <li className="flex flex-col bg-white p-4 m-4 rounded shadow">
