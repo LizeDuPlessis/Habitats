@@ -28,6 +28,13 @@ const CountryDetails = ({ country }) => {
           {country[0].continents}
         </p>
       </div>
+
+      {/* {country.languages &&
+        country.languages.map((item) => (
+          <h1 key={item.id} item={item}>
+            {item?.languages}
+          </h1>
+        ))} */}
     </div>
   );
 };

@@ -66,14 +66,14 @@ export default function CountryList({ country }) {
         {error}
       </span>
       <CountryCard>
-        <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xlg:grid-cols-4 gap-4 text-lg">
+        <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xlg:grid-cols-4 gap-4 text-lg ">
           {filteredCountry &&
             filteredCountry.map((country) => (
               <Link
                 href={`/Country/${country?.name.common}`}
                 key={country?.name.common}
               >
-                <a className="w-full border-solid  border-black border-2 hover:box-content rounded-lg mt-5 text-center ">
+                <a className="w-full border-solid  border-black border-2 hover:box-content rounded-lg mt-5 text-center hover:bg-teal-200">
                   <img
                     className="mt-5"
                     src={country?.flags.png}
