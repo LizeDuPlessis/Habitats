@@ -24,11 +24,8 @@ const CountryDetails = ({ country }) => {
           <span className="text-lg font-bold">Continent: </span>
           {country[0].continents}
         </p>
-        <p>
-          <span className="text-lg font-bold">Timezone: </span>
-          {country[0].timezones}
-        </p>
-        <ShowMoreBtn />
+        <p>Languages</p>
+        <ShowMoreBtn country={country} />
       </div>
 
       {/* {country.languages &&
