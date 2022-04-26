@@ -1,7 +1,9 @@
-const WeatherDetails = ({ countryWeather }) => {
+const WeatherDetails = ({ countryWeather, country }) => {
   return (
     <div className="border-black border-solid border-2 rounded-lg bg-red-600">
-      <h1 className="text-center">Weather</h1>
+      <h1 className="text-center">
+        Weather in <span>{country[0].capital}</span>
+      </h1>
       <ul className="flex flex-wrap justify-center">
         <li className="flex flex-col bg-white p-4 m-4 rounded shadow">
           Main{" "}

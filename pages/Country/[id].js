@@ -51,7 +51,7 @@ const Details = ({ country }) => {
     <div>
       <CountryDetails country={country} />
       <div>
-        <WeatherDetails countryWeather={countryWeather} />
+        <WeatherDetails countryWeather={countryWeather} country={country} />
       </div>
     </div>
   );

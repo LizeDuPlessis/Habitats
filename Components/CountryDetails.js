@@ -1,8 +1,9 @@
 import Link from "next/link";
+import ShowMoreBtn from "./ShowMoreBtn";
 
 const CountryDetails = ({ country }) => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-1">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
       <div>
         <Link href="/Country">
           <a>
@@ -12,21 +13,22 @@ const CountryDetails = ({ country }) => {
           </a>
         </Link>
       </div>
-      <h1 className="text-center">{country[0].name.common}</h1>
+      <h1 className="text-left">{country[0].name.common}</h1>
       <img src={country[0].flags.png} alt="flag" />
       <div>
         <p>
-          <span className="text-lg font-bold">Country: </span>
-          {country[0].name.common}
-        </p>
-        <p>
-          <span className="text-lg font-bold">Capital: </span>
+          <span className="text-lg font-bold">Capital City: </span>
           {country[0].capital}
         </p>
         <p>
           <span className="text-lg font-bold">Continent: </span>
           {country[0].continents}
         </p>
+        <p>
+          <span className="text-lg font-bold">Timezone: </span>
+          {country[0].timezones}
+        </p>
+        <ShowMoreBtn />
       </div>
 
       {/* {country.languages &&
