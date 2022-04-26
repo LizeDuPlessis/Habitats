@@ -4,10 +4,10 @@ Found out facts and the weather from any country in the world. I built this app 
 
 ## Built with
 
-*Nextjs (React)
-*TailwindCSS
-*Countries API
-*Open Weather API
+* Nextjs (React)
+* TailwindCSS
+* Countries API
+* Open Weather API
 
 ## Features
 
