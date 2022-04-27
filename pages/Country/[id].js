@@ -35,7 +35,7 @@ const Details = ({ country }) => {
     const getCountryWeather = async () => {
       try {
         const res = await fetch(
-          "https://api.openweathermap.org/data/2.5/weather?q=london&units=metric&appid=c00ada06a603c24db5737b2c99743430"
+          `https://api.openweathermap.org/data/2.5/weather?q=${country[0].capital}&units=metric&appid=c00ada06a603c24db5737b2c99743430`
         );
         const data = await res.json();
         setCountryWeather(data);
