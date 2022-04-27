@@ -2,7 +2,7 @@ const WeatherDetails = ({ countryWeather, country }) => {
   return (
     <>
       <div
-        className={`border-black border-solid border-2 rounded-lg ${
+        className={`w-100 border-black border-solid border-2 rounded-lg mx-1.5 my-5 ${
           countryWeather?.main?.temp >= 30
             ? "bg-red-700"
             : countryWeather?.main?.temp >= 20

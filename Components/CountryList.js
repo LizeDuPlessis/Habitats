@@ -73,7 +73,7 @@ export default function CountryList({ country }) {
                 href={`/Country/${country?.name.common}`}
                 key={country?.name.common}
               >
-                <a className="w-full border-solid  border-black border-2 hover:box-content rounded-lg mt-5 text-center hover:bg-teal-200">
+                <a className="w-100 border-solid border-black border-2 hover:box-content rounded-lg mt-5 text-center hover:bg-teal-200">
                   <img
                     className="mt-5"
                     src={country?.flags.png}
