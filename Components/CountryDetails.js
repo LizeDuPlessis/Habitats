@@ -24,16 +24,17 @@ const CountryDetails = ({ country }) => {
           <span className="text-lg font-bold">Continent: </span>
           {country[0].continents}
         </p>
-        <p>Languages</p>
+        <div>
+          Languages
+          <ul>
+            {country[0].languages &&
+              country?.languages?.map((language) => (
+                <li key={language.id}>{language.id}</li>
+              ))}
+          </ul>
+        </div>
         <ShowMoreBtn country={country} />
       </div>
-
-      {/* {country.languages &&
-        country.languages.map((item) => (
-          <h1 key={item.id} item={item}>
-            {item?.languages}
-          </h1>
-        ))} */}
     </div>
   );
 };
