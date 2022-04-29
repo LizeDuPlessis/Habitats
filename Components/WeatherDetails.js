@@ -2,7 +2,7 @@ const WeatherDetails = ({ countryWeather, country }) => {
   return (
     <>
       <div
-        className={`w-100 border-black border-solid border-2 rounded-lg mx-1.5 my-5 ${
+        className={`w-100 border-black border-solid border-2 rounded-lg mx-1.5 my-5 text-center  ${
           countryWeather?.main?.temp >= 30
             ? "bg-red-700"
             : countryWeather?.main?.temp >= 20
@@ -15,9 +15,9 @@ const WeatherDetails = ({ countryWeather, country }) => {
         }`}
       >
         <h1 className="text-center">
-          Weather in <span>{country[0].capital}</span>
+          Weather in <span>{country[0].capital[0]}</span>
         </h1>
-        <ul className="flex flex-wrap justify-center">
+        <ul className="flex flex-wrap justify-center mr-10">
           <li className="flex flex-col bg-white p-4 m-4 rounded shadow">
             Main{" "}
             <span className="text-4xl font-bold">
