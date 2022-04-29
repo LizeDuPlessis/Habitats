@@ -9,6 +9,7 @@ function ShowMoreBtn({ country }) {
   const handleShowMore = () => {
     setShowMore(!showMore);
   };
+
   return (
     <div>
       <button
@@ -32,7 +33,7 @@ function ShowMoreBtn({ country }) {
             </div>
             <p>
               <span className="text-lg font-bold">Population: </span>
-              {country[0].population}
+              {country[0].population.toLocaleString()}
             </p>
             <Link href={country[0].maps.googleMaps}>
               <a className={styles.btn}>
