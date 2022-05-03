@@ -5,13 +5,7 @@ import Image from "next/image";
 function Header({ text }) {
   return (
     <header className="flex justify-center ml-5 mt-4">
-      <Image
-        // className="logo"
-        src="/logo.png"
-        width={115}
-        height={110}
-        alt="logo"
-      />
+      <Image src="/logo.png" width={115} height={110} alt="logo" />
       <h2 className="mt-5">{text}</h2>
     </header>
   );

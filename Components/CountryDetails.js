@@ -1,5 +1,9 @@
+import Link from "next/link";
+import ShowMoreBtn from "./ShowMoreBtn";
+
 const CountryDetails = ({ country }) => {
   return (
+<<<<<<< HEAD
 <<<<<<< Updated upstream
     <div>
       <p>
@@ -15,6 +19,8 @@ const CountryDetails = ({ country }) => {
         {country[0].continents}
       </p>
 =======
+=======
+>>>>>>> Habitats
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
       <div>
         <Link href="/Country">
@@ -42,15 +48,23 @@ const CountryDetails = ({ country }) => {
         <div>
           Languages
           <ul>
+<<<<<<< HEAD
             {country.languages &&
               country[0].languages.map((language) => (
+=======
+            {country[0].languages &&
+              country?.languages?.map((language) => (
+>>>>>>> Habitats
                 <li key={language.id}>{language.id}</li>
               ))}
           </ul>
         </div>
         <ShowMoreBtn country={country} />
       </div>
+<<<<<<< HEAD
 >>>>>>> Stashed changes
+=======
+>>>>>>> Habitats
     </div>
   );
 };

@@ -9,6 +9,8 @@ export default function CountryList({ country }) {
 
   const [userSearched, setUserSearched] = useState(false);
 
+  const [error, setError] = useState(null);
+
   const handleUserInput = (e) => {
     setUserInput(e.target.value);
     console.log(userInput);
@@ -16,6 +18,20 @@ export default function CountryList({ country }) {
   const handleUserSearched = (e) => {
     e.preventDefault();
     setUserSearched(!userSearched);
+    if (filteredCountry.length === 0) {
+      setError(
+        <div className="text-center mt-5 ">
+          <Image
+            src="/try_again.jpg"
+            width={350}
+            height={350}
+            alt="try_again"
+          />
+
+          <h1>Uhhh..Try again!</h1>
+        </div>
+      );
+    }
   };
 
   const filteredCountry = country.filter((country) =>
@@ -23,34 +39,49 @@ export default function CountryList({ country }) {
   );
   return (
     <>
-      <form type="submit" className="text-center">
+      <form role="search" className="text-center">
+        <label htmlFor="search" className="sr-only">
+          Search:
+        </label>
         <input
           className="w-4/5 h-9 text-lg shadow appearance-none rounded-lg border-solid border-1 border-stone-300 focus:shadow-outline"
-          type="input"
+          type="search"
+          id="search"
+          name="search"
           placeholder="Type to search..."
+          title="search for a country"
           onChange={handleUserInput}
           value={userInput}
+          required
         />
         <button
           className=" h-9 ml-3 shadow appearance-none rounded-lg border-solid border-1 border-stone-300 hover:shadow "
           onClick={handleUserSearched}
+          type="submit"
         >
           Search
         </button>
       </form>
+      <span className="errMsg" role="status">
+        {error}
+      </span>
       <CountryCard>
-        <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xlg:grid-cols-4 gap-4 text-lg">
-          {filteredCountry.length ? (
+        <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xlg:grid-cols-4 gap-4 text-lg ">
+          {filteredCountry &&
             filteredCountry.map((country) => (
               <Link
                 href={`/Country/${country?.name.common}`}
                 key={country?.name.common}
               >
+<<<<<<< HEAD
 <<<<<<< Updated upstream
                 <a className="w-full border-solid  border-black border-2 hover:box-content rounded-lg mt-5 text-center ">
 =======
                 <a className="w-100 h-100 border-solid border-black border-2 hover:box-content rounded-lg mt-5 text-center hover:bg-gradient-to-r from-violet-500 to-fuchsia-500 px-2 py-4 ">
 >>>>>>> Stashed changes
+=======
+                <a className="w-100 border-solid border-black border-2 hover:box-content rounded-lg mt-5 text-center hover:bg-gradient-to-r from-violet-500 to-fuchsia-500">
+>>>>>>> Habitats
                   <img
                     className="mt-5"
                     src={country?.flags.png}
@@ -60,19 +91,7 @@ export default function CountryList({ country }) {
                   <h2 className=" break-words">{country?.name.common}</h2>
                 </a>
               </Link>
-            ))
-          ) : (
-            <div className="text-center mt-5 ">
-              <Image
-                src="/try_again.jpg"
-                width={350}
-                height={350}
-                alt="try_again"
-              />
-
-              <h1>Uhhh..Try again!</h1>
-            </div>
-          )}
+            ))}
         </div>
       </CountryCard>
     </>
