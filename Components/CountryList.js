@@ -46,14 +46,18 @@ export default function CountryList({ country }) {
                 href={`/Country/${country?.name.common}`}
                 key={country?.name.common}
               >
+<<<<<<< Updated upstream
                 <a className="w-full border-solid  border-black border-2 hover:box-content rounded-lg mt-5 text-center ">
+=======
+                <a className="w-100 h-100 border-solid border-black border-2 hover:box-content rounded-lg mt-5 text-center hover:bg-gradient-to-r from-violet-500 to-fuchsia-500 px-2 py-4 ">
+>>>>>>> Stashed changes
                   <img
                     className="mt-5"
                     src={country?.flags.png}
                     alt="country-flag"
                   />
 
-                  <h2>{country?.name.common}</h2>
+                  <h2 className=" break-words">{country?.name.common}</h2>
                 </a>
               </Link>
             ))
